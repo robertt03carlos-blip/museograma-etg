@@ -1,0 +1,19 @@
+MUSEOGRAMA — AJUSTE DE EXPOSICIONES
+
+CAMBIOS EN ESTA VERSION:
+- En Exposiciones se agregó un campo independiente de enlace externo general.
+- Los enlaces externos se muestran como botón "Consultar sitio externo" y abren
+  en una pestaña nueva; ya no se intenta incrustar una página web genérica,
+  evitando el recuadro de contenido bloqueado.
+- YouTube continúa siendo opcional y con su reproductor separado.
+- El formulario de Exposiciones se simplificó: se quitaron opciones de control
+  de orden manual y se conservaron los campos necesarios, publicación, guardado
+  y carga de fotografías.
+- Se conservan el inventario, piezas relacionadas y fotografías existentes.
+
+Para preparar Python: doble clic en 1_PREPARAR_PYTHON.cmd.
+Para abrir: doble clic en ABRIR_MUSEOGRAMA.cmd.
+
+Antes de reemplazar la instalación activa, guarda una copia de seguridad.
+Las pruebas de integración de Flask no pudieron ejecutarse en este entorno,
+porque Flask no está instalado aquí. Se comprobó la sintaxis del módulo Python.

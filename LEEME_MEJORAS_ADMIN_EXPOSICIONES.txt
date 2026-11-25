@@ -1,0 +1,13 @@
+MUSEOGRAMA — MEJORAS DEL ADMINISTRADOR DE EXPOSICIONES
+
+Se conserva la apariencia general del sitio. Mejoras funcionales:
+- Galería administrativa con portada (primera foto), mover arriba/abajo y eliminación individual.
+- Carga múltiple de fotografías (8 MB máximo por foto; máximo 30 por exposición).
+- Eliminación de exposiciones con confirmación y persistencia para las exposiciones iniciales.
+- Duplicación como borrador (sin copiar fotos ni piezas vinculadas).
+- Reordenamiento persistente de fotos, incluso las originales.
+- Enlaces externos abren en otra pestaña, no se incrustan.
+
+Antes de sustituir la instalación, conserva una copia de seguridad de la carpeta y base de datos.
+Validaciones realizadas: compilación sintáctica Python, compilación Jinja del template y ZIP.
+La aplicación Flask completa no se ejecutó en este entorno porque Flask no está instalado.
