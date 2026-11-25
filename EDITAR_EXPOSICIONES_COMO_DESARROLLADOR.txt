@@ -1,0 +1,26 @@
+MUSEOGRAMA — EDITAR EXPOSICIONES COMO DESARROLLADOR
+
+Archivo principal de contenido:
+  config/exposiciones_iniciales.json
+
+Puedes editar este JSON con VS Code o cualquier editor de texto. Cada exposición tiene:
+  id, title, date, endDate, place, description, photos, pieceIds, source, published, sort_order, youtube_url
+
+ORDEN:
+  sort_order: 1 = aparece primero; 2 = segundo; etc.
+  Cambia los números para reordenar. No cambies los id existentes.
+  En la entrega inicial, Los Pinos = 1, Centro Administrativo = 2, Motorcon = 3.
+
+VIDEO:
+  youtube_url es opcional. Déjalo como cadena vacía ("") si no hay video.
+  Acepta enlaces YouTube watch, youtu.be o /embed/.
+
+IMÁGENES:
+  photos usa nombres de archivos de static/exposiciones/ o rutas de imágenes existentes.
+  Para agregar una imagen, copia el archivo a esa carpeta y agrega su nombre en el arreglo photos.
+
+IMPORTANTE:
+  Al iniciar, Museograma sincroniza los campos de contenido desde este JSON a la base local.
+  Conserva las fotos agregadas desde la administración y las piezas vinculadas que ya estén guardadas.
+  Haz una copia de config/exposiciones_iniciales.json y datos/coleccion.sqlite3 antes de cambios.
+  No edites .env con credenciales y no lo compartas.

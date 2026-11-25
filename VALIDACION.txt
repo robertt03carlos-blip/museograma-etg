@@ -1,0 +1,28 @@
+VALIDACIÓN V1.2 · 16/11/2026
+
+11 pruebas automatizadas aprobadas en Python 3.12/Linux, con bases temporales:
+- Catálogo inicialmente vacío, portada, páginas de temas y permisos de visitantes.
+- Compatibilidad del formato del hash de la contraseña del paquete anterior.
+- Datos privados y borradores excluidos de la API pública; precios solo en modo comercial.
+- Guardado por pieza, campos del editor y rechazo de edición antigua.
+- Activación del administrador, permisos y verificación de correo, SMS y WhatsApp.
+- Recuperación por los tres canales, uso único e invalidación de sesiones.
+- Caducidad, cinco intentos y límites de solicitudes de códigos.
+- Configuración ausente del proveedor: error sin anunciar un envío exitoso.
+- Excel generado para pruebas con foto incrustada: vista previa, importación,
+  exportación y relectura sin conflictos. Respaldo ZIP y restauración.
+- Foto principal, galería, protección de originales y persistencia.
+- Importación rechazada si la colección cambió tras su vista previa.
+
+Se revisó la sintaxis de todos los archivos JavaScript con node --check y la
+compilación de Python. Se comprobó que el JPEG de portada conserva los mismos
+bytes que el ZIP V1.1, y que la entrega no contiene base de datos ni registros.
+
+LÍMITES
+No se probaron envíos reales SMTP/Twilio, Windows, PyInstaller ni la interfaz en
+un navegador. Las pruebas de verificación usan un proveedor simulado.
+No se recibió el Excel real en este turno: no se repiten como hechos propios
+las cifras de importación que declaraba el documento de validación de V1.1.
+Las capturas del asesor y el Word completo no estaban adjuntos. Se conservó
+la portada incluida en V1.1; no se comprobó contra documentos no disponibles.
+No se generó una vista previa compartida ni se publicó ningún sitio.

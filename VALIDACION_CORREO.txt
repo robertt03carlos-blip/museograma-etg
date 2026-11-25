@@ -1,0 +1,2 @@
+22 pruebas funcionales correctas; resultados en ../RESULTADO_PRUEBAS.txt.
+Guia final en ../GUIA_ENTREGA.txt. Las pruebas no enviaron nuevos correos reales.

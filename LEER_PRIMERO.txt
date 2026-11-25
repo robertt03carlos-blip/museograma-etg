@@ -1,0 +1,124 @@
+MUSEOGRAMA V1.2 · ENTREGA LOCAL VACÍA
+
+PORTADA Y CONTENIDO
+Se conserva sin alterar static/portada_coleccion.jpg de V1.1: Historia material
+del petróleo en México. Se respeta la paleta verde oscuro y crema, con los
+acentos que ya tenía el diseño recibido. Se muestra la portada completa.
+No se incluyen registros, catálogos, fotos de piezas, visitas ni movimientos.
+La base de datos y la clave de sesión se crean al iniciar en la carpeta datos.
+
+ABRIR EN WINDOWS
+Extrae todo el ZIP. Ejecuta 1_PREPARAR_ENTORNO.cmd y luego
+2_ABRIR_MUSEOGRAMA.cmd. Necesita Python 3.11 o posterior.
+La instalación requiere internet; la consulta local posterior no, salvo los
+servicios de envío de códigos. Mantén abierta la ventana del programa.
+Dirección local: http://127.0.0.1:8765/
+Si está ocupado el puerto: .venv\Scripts\python.exe app.py --puerto 8766
+Para cerrar, presiona Ctrl+C en la terminal.
+En macOS/Linux: crea un entorno virtual, instala requirements.txt y ejecuta
+python app.py. La prueba automatizada no requiere abrir un navegador.
+
+CUENTAS DEL ZIP CAFÉ
+Desarrollador: Coleccion_Web_Programador. Se conserva el hash de la contraseña
+original en config/acceso_inicial.json. Usa la contraseña anterior exacta.
+No se conserva la cuenta Desarrollador_Pemex de V1.1.
+Administrador: AdminETG_176463. Comienza sin activar.
+El desarrollador genera un código desde Configuración y seguridad. Caduca
+en 72 horas y sirve una vez. El administrador usa Activar mi cuenta y elige
+una contraseña de 10 a 200 caracteres. Nadie le asigna una contraseña pública.
+Solo existen esas dos cuentas para editar la colección.
+Los visitantes no pueden modificar piezas, importar, exportar inventarios
+administrativos, ver respaldos ni consultar ubicación o procedencia privada.
+La consulta es pública solo para los equipos que puedan llegar al servidor.
+Las acciones técnicas del desarrollador mantienen el tratamiento de historial
+que ya traía V1.1; no se añadió un historial nuevo del desarrollador.
+
+VERIFICACIÓN Y RECUPERACIÓN
+Datos de recuperación permite verificar teléfono por SMS o WhatsApp y correo
+por separado. Los códigos caducan a los 10 minutos, tienen cinco intentos y
+solo se usan una vez. Se limita la solicitud repetida de códigos.
+La recuperación envía al medio previamente verificado, no a un destino nuevo.
+Recuperar una cuenta invalida sus sesiones anteriores. Cambiar la contraseña
+invalida las otras sesiones y conserva la sesión desde la que se hizo el cambio.
+También se conservan los códigos de recuperación guardados sin conexión.
+Las contraseñas se capturan en campos ocultos, no mediante ventanas de texto.
+
+Para los envíos reales:
+- Copia .env.example a .env junto a app.py y reinicia la aplicación.
+- Correo: MUSEO_SMTP_HOST, MUSEO_SMTP_PORT, MUSEO_MAIL_FROM,
+  MUSEO_SMTP_USER y MUSEO_SMTP_PASSWORD. Usa un proveedor con TLS.
+- SMS: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN y TWILIO_SMS_FROM.
+- WhatsApp: también TWILIO_WHATSAPP_FROM y una plantilla de autenticación
+  aprobada en TWILIO_WHATSAPP_CONTENT_SID, con variable 1 para el código.
+No se incluyen cuentas ni saldos de esos servicios. Los envíos pueden generar
+cargos. Si faltan configuraciones, se informa un error; no se simula éxito.
+Las pruebas incluidas simulan los proveedores: no garantizan entrega real.
+
+EXCEL
+Admite .xlsx y .xlsm. No ejecuta macros. Puedes usar tu inventario o la
+Plantilla_Inventario.xlsx, que contiene encabezados y ninguna pieza.
+Crea un catálogo, carga el Excel en Actualización de inventario y revisa la
+vista previa. Decide qué dato conservar cuando haya diferencias.
+No se borra una pieza porque no figure en una actualización del Excel.
+Se conservan las fotografías incrustadas compatibles, los Top y sus posiciones.
+El editor permite modificar notas, tema, fuentes, fechas y selecciones Top.
+Los nombres de columnas del Excel anterior siguen siendo compatibles aunque
+las etiquetas en pantalla ahora usen palabras más sencillas.
+La primera hoja debe tener Consecutivo y Nombre de la Pieza entre sus primeras
+30 filas. El límite es de 20 000 filas y 600 MB de archivo recibido.
+La importación puede necesitar bastante memoria si el Excel contiene muchas fotos.
+CSV y documentos Word no se importan como inventario en esta versión.
+Puedes pegar el texto de una pieza con etiquetas desde Agregar pieza desde un texto.
+
+GUARDADO Y FOTOGRAFÍAS
+Cada pieza se guarda individualmente en SQLite; no se envía toda la colección
+con cada cambio. Las fotos se cargan por separado, hasta 8 MB por foto manual.
+Cada registro admite foto principal y hasta 40 adicionales, con ampliación.
+Se conservan originales cargados en esta versión dentro de la base de datos.
+Si otra ventana cambia una pieza, se rechaza el guardado antiguo para evitar
+sobrescribirlo. Guarda una copia del texto y vuelve a abrir el registro.
+Si falla una foto tras guardar la ficha, los datos ya guardados se conservan:
+vuelve a seleccionar la foto y guarda otra vez.
+
+DATOS PÚBLICOS Y COMERCIALES
+La consulta histórica pública excluye importes, costo de adquisición,
+procedencia, ubicación física, notas internas y campos no autorizados.
+El modo comercial permite consultar los precios de referencia y disponibilidad,
+como en V1.1. El costo de adquisición nunca se publica.
+Los borradores y sus fotografías no son públicos. Los totales públicos solo
+cuentan piezas publicadas; los totales completos se consultan al iniciar sesión.
+
+TEMAS DE LA COLECCIÓN
+1. La expropiación petrolera.
+2. Productos del petróleo en la vida diaria.
+3. Trabajadores de PEMEX.
+4. Marcas y publicidad petrolera.
+5. Antes de PEMEX.
+Cada tema muestra hasta 12 piezas publicadas según las clasificaciones del
+inventario. No se inventan fechas ni información histórica para rellenarlos.
+Las piezas por fecha usan los años del objeto, no los del acontecimiento representado.
+
+RESPALDOS
+Descarga el respaldo ZIP desde el panel. Conserva la base, galerías, originales,
+cuentas y seguimiento. Guárdalo de forma privada porque contiene datos de acceso.
+El Excel exportado no sustituye al respaldo completo. Las hojas de ejemplares,
+movimientos y conservación son de consulta y no se reimportan.
+Para restaurar, cierra el programa y ejecuta 5_RESTAURAR_RESPALDO.cmd.
+Se conserva una copia de la base que se reemplaza. Este restaurador admite las
+cuentas de V1.2; no migra la base del paquete café ni las cuentas de V1.1.
+No copies bases anteriores sobre esta instalación. Conserva el ZIP original.
+
+VISTA PRIVADA Y PUBLICACIÓN
+No se ha publicado esta entrega ni modificado el sitio existente.
+http://127.0.0.1:8765/ es la vista privada en la computadora donde se ejecuta.
+No es un enlace de internet ni funciona en otra computadora.
+4_ABRIR_EN_RED_LOCAL.cmd hace accesible la aplicación a equipos de la misma red;
+úsalo solo si deseas ese acceso. No configura HTTPS.
+No se generó una URL privada de internet: este entorno no ofrece una herramienta
+de vista previa compartida para esta aplicación Flask.
+
+PRUEBAS
+Desde Museo con sus dependencias instaladas:
+python -m unittest discover -s tests -v
+Consulta VALIDACION.txt para alcance y límites. No incluye un EXE compilado;
+3_COMPILAR_WINDOWS.cmd permite prepararlo en Windows con PyInstaller.
